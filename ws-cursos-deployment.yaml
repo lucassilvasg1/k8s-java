@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ws-cursos
+  labels:
+    app: ws-cursos
+spec:
+  selector:
+    matchLabels:
+      app: ws-cursos    
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: "ws-cursos"
+    spec:
+      containers:
+        - name: ws-cursos
+          image: "lucassilvasg1/ws-cursos:latest"
+
+          resources:
+            requests: 
+              cpu: "0.1"
+              memory: 100Mi
+            limits:
+              cpu: "0.1"
+              memory: 150Mi

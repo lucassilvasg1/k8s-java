@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ws-alunos
+  labels:
+    app: ws-alunos
+spec:
+  selector:
+    matchLabels:
+      app: ws-alunos    
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: "ws-alunos"
+    spec:
+      containers:
+        - name: ws-alunos
+          image: "lucassilvasg1/ws-alunos:latest"
+
+          resources:
+            requests: 
+              cpu: "0.1"
+              memory: 100Mi
+            limits:
+              cpu: "0.1"
+              memory: 150Mi

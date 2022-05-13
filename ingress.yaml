@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-host
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "localhost"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/ws-alunos"
+        backend:
+          name: ws-alunos-service
+          port:
+              number: 8080
+      - pathType: Prefix
+        path: "/ws-cursos"
+        backend:
+          name: ws-cursos-service
+          port: 
+            number: 8081

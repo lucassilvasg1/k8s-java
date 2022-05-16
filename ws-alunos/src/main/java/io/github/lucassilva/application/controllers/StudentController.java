@@ -28,7 +28,7 @@ public class StudentController {
 
     private ResponseEntity<CourseDTO> getCourse() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://ws-cursos:8080/courses/1";
+        String url = "http://10.96.79.194:8081/courses/1";
         return restTemplate.getForEntity(url, CourseDTO.class);
     }
 

@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: ws-alunos    
-  replicas: 4
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ws-alunos
-          image: "lucassilvasg1/ws-alunos:latest"
+          image: "lucassilvasg1/ws-alunos:1"
 
           resources:
             requests: 
